@@ -5,4 +5,4 @@ const request = async (url) => {
   return res.json();
 };
 
-export const getData = async (url, mapper) => await pipe(request, mapper)(url);
+export const getData = async (url, ...mappers) => await pipe(request, ...mappers)(url);
