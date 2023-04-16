@@ -1,4 +1,4 @@
-import { request } from '../../utils';
+import { getData } from '../../utils';
 import { API_URL } from '../../constants';
 import Observable from './Observable';
 
@@ -21,7 +21,7 @@ class LabelListModel extends Observable {
   }
 
   async #setInitialLabelList() {
-    this.#labelList = await request(API_URL.LABEL);
+    this.#labelList = await getData(API_URL.LABEL);
     this.notify(this.#labelList);
   }
 }
